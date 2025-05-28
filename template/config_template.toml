@@ -1,0 +1,24 @@
+[Telegram]
+bot_token = "" # 你的Telegram Bot Token（必填）
+
+[MaiBot_Server] # 连接麦麦的ws服务设置
+platform_name = "telegram" # 标识adapter的名称（必填）
+host = "localhost"   # 麦麦在.env文件中设置的主机地址，即HOST字段
+port = 8000          # 麦麦在.env文件中设置的端口，即PORT字段
+
+[Chat] # 黑白名单功能
+group_list_type = "whitelist" # 群组名单类型，可选为：whitelist, blacklist
+group_list = [] # 群组 chat_id 名单
+# 当 group_list_type 为 hitelist 时，只有群组名单中的群组可以聊天
+# 当 group_list_type 为 blacklist 时，群组名单中的任何群组无法聊天
+private_list_type = "whitelist" # 私聊名单类型，可选为：whitelist, blacklist
+private_list = [] # 私聊 chat_id 名单
+# 当private_list_type为whitelist时，只有私聊名单中的用户可以聊天
+# 当private_list_type为blacklist时，私聊名单中的任何用户无法聊天
+ban_user_id = [] # 全局禁止名单（全局禁止名单中的用户无法进行任何聊天）
+
+[Voice] # 发送语音设置
+use_tts = false # 是否使用tts语音（请确保你配置了tts并有对应的adapter）
+
+[Debug]
+log_level = "INFO" # 可选，日志等级（FATAL, ERROR, WARN, INFO, DEBUG, NOTSET)不填则为 INFO
